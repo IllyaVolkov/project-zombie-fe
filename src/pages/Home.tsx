@@ -36,7 +36,7 @@ function SurvivorCard({ survivor, survivors }: { survivor: Survivor, survivors: 
             <Card className="m-5" sx={{ minWidth: 275 }}>
                 <CardContent>
                     <Typography gutterBottom sx={{ color: survivor.is_infected ? 'error.main' : 'text.secondary', fontSize: 14, textTransform: 'uppercase' }}>
-                        {survivor.is_infected ? "infected" : "survived"}
+                        {survivor.is_infected ? "infected" : "healthy"}
                     </Typography>
                     <Typography variant="h5" component="div">
                         {survivor.name}

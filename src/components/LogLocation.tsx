@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { MapContainer, TileLayer, Marker, Popup, useMapEvents } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, useMapEvents } from 'react-leaflet';
 import Box from "@mui/material/Box";
 import 'leaflet/dist/leaflet.css';
 
@@ -52,13 +52,7 @@ function LogLocationComponent({ survivor, onSubmit }:{ survivor: Survivor, onSub
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'/>
                 <ClickDetectionComponent/>
-                <Marker position={position}>
-                    <Popup>
-                        A pretty CSS3 popup.
-                        <br/>
-                        Easily customizable.
-                    </Popup>
-                </Marker>
+                <Marker position={position}/>
             </MapContainer>
             <br/>
             <Typography sx={{color: 'text.secondary', fontSize: 14}}>Selected
