@@ -7,53 +7,49 @@ import IconButton from '@mui/material/IconButton';
 import Drawer from '@mui/material/Drawer';
 import MenuIcon from '@mui/icons-material/Menu';
 import Tabs from '@mui/material/Tabs';
+import { useLocation } from 'react-router-dom';
 
 import LinkTab from './LinkTab';
 
 
-const tabs: Array<{label: string, to: string}> = [
-    {
+const tabs: Map<string, {label: string, to: string}> = new Map([
+    ["/", {
         label: "Home",
         to: "/",
-    },
-    {
+    }],
+    ["/map", {
         label: "Map",
         to: "/map",
-    },
-    {
+    }],
+    ["/register", {
         label: "Register",
         to: "/register",
-    },
-    {
+    }],
+    ["/trade", {
         label: "Trade",
         to: "/trade",
-    },
-]
+    }],
+])
 
 
 function HeaderComponent() {
+    const location = useLocation();
     const [drawerOpen, setDrawerOpen] = useState(false);
-    const [tabValue, setTabValue] = React.useState(0);
 
     const toggleDrawer = (newOpen: boolean) => () => {
         setDrawerOpen(newOpen);
     };
 
-    const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
-        setTabValue(newValue);
-    };
-
     const DrawerContent = (
         <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)}>
             <Tabs
-                value={tabValue}
-                onChange={handleTabChange}
+                value={location.pathname}
                 role="navigation"
                 orientation="vertical"
                 sx={{ borderRight: 1, borderColor: 'divider' }}
             >
-                {tabs.map((tab) => (
-                    <LinkTab label={tab.label} to={tab.to} />
+                {Array.from(tabs, ([value, tab]) => (
+                    <LinkTab label={tab.label} to={tab.to} value={value} />
                 ))}
             </Tabs>
         </Box>
@@ -75,7 +71,9 @@ function HeaderComponent() {
                             <MenuIcon />
                         </IconButton>
                         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                            {tabs[tabValue].label}
+                            {
+                                tabs.get(location.pathname)?.label || "Not Found"
+                            }
                         </Typography>
                     </Toolbar>
                 </AppBar>

@@ -5,6 +5,7 @@ import {Link} from "react-router-dom";
 interface LinkTabProps {
     label: string;
     to: string;
+    value: string;
     selected?: boolean;
 }
 
