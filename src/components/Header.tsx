@@ -41,7 +41,7 @@ function HeaderComponent() {
     };
 
     const DrawerContent = (
-        <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)}>
+        <Box sx={{ width: 250, marginY: 3 }} role="presentation" onClick={toggleDrawer(false)}>
             <Tabs
                 value={location.pathname}
                 role="navigation"

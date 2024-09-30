@@ -134,8 +134,7 @@ export async function action({ request }: any) {
                 age: formData.get("age"),
                 gender_id: formData.get("gender"),
                 inventory_items: Array.from(formData, ([controlName, value]) => ({controlName, value}))
-                    .filter(({controlName, value}) => controlName.startsWith("inventory_items."))
-                    .filter(({controlName, value}) => value > 0)
+                    .filter(({controlName, value}) => controlName.startsWith("inventory_items.") && value > 0)
                     .map(({controlName, value}) => ({
                         resource_id: parseInt(controlName.replace("inventory_items.", "")),
                         quantity: value
