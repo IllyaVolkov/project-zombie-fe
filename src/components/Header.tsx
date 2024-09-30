@@ -49,7 +49,7 @@ function HeaderComponent() {
                 sx={{ borderRight: 1, borderColor: 'divider' }}
             >
                 {Array.from(tabs, ([value, tab]) => (
-                    <LinkTab label={tab.label} to={tab.to} value={value} />
+                    <LinkTab label={tab.label} to={tab.to} value={value} key={value} />
                 ))}
             </Tabs>
         </Box>
