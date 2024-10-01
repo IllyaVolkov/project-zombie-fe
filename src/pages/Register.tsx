@@ -55,12 +55,12 @@ function RegisterPage() {
                 />
                 <br/>
                 <FormControl fullWidth style={{margin: "5px"}}>
-                    <InputLabel id="demo-simple-select-label">
+                    <InputLabel id="select-label">
                         Gender
                         <span className="MuiFormLabel-asterisk"> *</span>
                     </InputLabel>
                     <Select
-                        labelId="demo-simple-select-label"
+                        labelId="select-label"
                         style={{width: "200px"}}
                         label="Gender"
                         name="gender"

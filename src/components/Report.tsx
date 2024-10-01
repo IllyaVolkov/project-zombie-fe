@@ -49,12 +49,12 @@ function ReportComponent({ survivor, reporters, onSubmit }:{ survivor: Survivor,
                 reporters.length > 0 && (
                     <form className="flex flex-col justify-center" onSubmit={handleReportSubmit}>
                         <FormControl fullWidth style={{margin: "5px"}}>
-                            <InputLabel id="demo-simple-select-label">
+                            <InputLabel id="select-label">
                                 Who reports?
                                 <span className="MuiFormLabel-asterisk"> *</span>
                             </InputLabel>
                             <Select
-                                labelId="demo-simple-select-label"
+                                labelId="select-label"
                                 style={{width: "200px"}}
                                 label="Who reports?"
                                 name="author"

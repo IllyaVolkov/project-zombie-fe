@@ -4,7 +4,7 @@ import './App.css';
 import HomePage, {loader as homePageLoader} from "./pages/Home";
 import RegisterPage, {loader as registerPageLoader, action as registerPageAction} from "./pages/Register";
 import MapPage, {loader as mapPageLoader} from "./pages/Map";
-import TradePage, {loader as tradePageLoader} from "./pages/Trade";
+import TradePage, {loader as tradePageLoader, action as tradePageAction} from "./pages/Trade";
 import HeaderComponent from './components/Header';
 
 const AppLayout = () => (
@@ -22,7 +22,7 @@ const router = createBrowserRouter([
             {path: '/', element: <HomePage/>, loader: homePageLoader},
             {path: '/map', element: <MapPage/>, loader: mapPageLoader},
             {path: '/register', element: <RegisterPage/>, loader: registerPageLoader, action: registerPageAction},
-            {path: '/trade', element: <TradePage/>, loader: tradePageLoader},
+            {path: '/trade', element: <TradePage/>, loader: tradePageLoader, action: tradePageAction},
         ],
     }
 ]);
