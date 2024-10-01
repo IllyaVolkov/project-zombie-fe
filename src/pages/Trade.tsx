@@ -126,7 +126,7 @@ function TradePage() {
                                                 input: {
                                                     notched: true,
                                                 },
-                                                htmlInput: {min: 0, max: traderInventory[name]?.quantity || 0}
+                                                htmlInput: {min: 0}
                                             }}
                                             required
                                         />
@@ -177,7 +177,7 @@ function TradePage() {
                                                 input: {
                                                     notched: true,
                                                 },
-                                                htmlInput: { min: 0, max: partnerInventory[name]?.quantity || 0 }
+                                                htmlInput: { min: 0 }
                                             }}
                                             required
                                         />
